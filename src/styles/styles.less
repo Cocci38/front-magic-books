@@ -1,0 +1,55 @@
+@import "variables.less";
+@import "mixins.less";
+
+* {
+    background-color: @light;
+}
+body {
+    font-family: @font-style;
+}
+header {
+    //background: fadeout(@color, 20%);
+    display: flex;
+    flex-direction: row;
+    //justify-content: center;
+    align-items: center;
+    img {
+        width: 12%;
+    }
+
+    ul {
+        list-style: none;
+        justify-self: center;
+
+        a {
+            text-decoration: none;
+            color: @dark-blue;
+
+        }
+    }
+
+    .activeLink {
+        color: @dark-blue;
+    }
+}
+h1 {
+    font-family: @font-title;
+}
+h2{
+    background-color: @dark-blue;
+    color: @light;
+    font-weight: normal;
+    a{
+        text-decoration: none;
+        background-color: @dark-blue;
+        color: @light;
+        font-weight: normal;
+    }
+}
+
+.paragraphFlex {
+    .flexColumn;
+    .paragraphName{
+        color: @dark-blue;
+    }
+}

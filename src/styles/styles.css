@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/cinzel/v23/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnTYo.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Cinzel Decorative';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/cinzeldecorative/v14/daaCSScvJGqLYhG8nNt8KPPswUAPnh7U.ttf) format('truetype');
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+* {
+  background-color: #EEEFF6;
+}
+body {
+  font-family: "Lustria";
+}
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header img {
+  width: 12%;
+}
+header ul {
+  list-style: none;
+  justify-self: center;
+}
+header ul a {
+  text-decoration: none;
+  color: #2D3250;
+}
+header .activeLink {
+  color: #2D3250;
+}
+h1 {
+  font-family: 'Cinzel', serif;
+}
+h2 {
+  background-color: #2D3250;
+  color: #EEEFF6;
+  font-weight: normal;
+}
+h2 a {
+  text-decoration: none;
+  background-color: #2D3250;
+  color: #EEEFF6;
+  font-weight: normal;
+}
+.paragraphFlex {
+  display: flex;
+  flex-direction: column;
+}
+.paragraphFlex .paragraphName {
+  color: #2D3250;
+}
