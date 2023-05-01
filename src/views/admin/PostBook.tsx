@@ -4,21 +4,21 @@ import axios from "axios";
 //import ReactDOM from "react-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-interface FormData {
-    title: string;
-    author_id: number;
-    editor: string;
-    summary: string;
-    release_date: string;
-    cover: string;
-    category_id: number;
-    // status: number;
-    // description: string;
-    // date: Date;
-    // location: string;
-    // firstname: string;
-    // lastname: string;
-    // email: string;
+type FormData = {
+    // title: string;
+    // author_id: number;
+    // editor: string;
+    // summary: string;
+    // release_date: string;
+    // cover: string;
+    // category_id: number;
+    title: string,
+    author_id: number,
+    editor: string,
+    summary: string,
+    release_date: string,
+    cover: string,
+    category_id: number,
 };
 
 //const baseURL = "http://localhost/magic-books/backend/create/book";
@@ -27,36 +27,53 @@ export const PostBook = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
     // const { register, handleSubmit } = useForm();
-    const onSubmit = async ({data}: any) => {
-        // await axios
-        //     // .post('http://localhost/magic-books/backend/create/book', data, { headers: { 'Content-Type': 'application/json' } })
-        //     .post('http://localhost/magic-books/backend/create/book', data, {
-        //         headers: {
-        //             'Access-Control-Allow-Headers': 'Content-Type',
-        //             'Accept': 'application/json',
-        //             'Content-Type': 'application/json',
-        //             'Access-Control-Allow-Origin': '*',
-        //             'Access-Control-Allow-Methods': 'POST',
-        //             // 'Access-Control-Allow-Credentials': false,
-        //         }
-        //     })
-            
-        //     .then((res) => { console.log(res.data) })
-        //     .catch((error) => {
-        //         console.log(error);
-        //     });
-        await axios({
-            method: "post",
-            headers: { 'Content-Type': 'application/json'},
-            url: `http://localhost/magic-books/backend/create/book`,
-            //withCredentials: true,
-            data,
-        })
-        .then((res) => { console.log(res.data) })
-        .catch((error) => {
-            console.log(error);
-        });
+    //const onSubmit: SubmitHandler<FormData> = (data) => console.log(data);
+    // const onSubmit: SubmitHandler<FormData> = (data) => {
+    //     console.log(data);
+    //     let newData = JSON.stringify({data});
+    //     console.log(newData);
+
+    //     axios
+    //         .post(
+    //             'http://localhost/magic-books/backend/create/book',
+    //             newData,
+    //             { headers: { 'Content-Type': 'application/json' } }
+    //         )
+    //         .then((res) => { console.log(res.data) })
+    //         .catch((error) => { console.log(error.newData) });
+    // };
+    // const onSubmit: SubmitHandler<FormData> = async ({ data }: any) => {
+    //     console.log(data);
+    //     await axios
+    //         .post('http://localhost/magic-books/backend/create/book', data, { headers: { 'Content-Type': 'application/json' } })
+    //         .then((res) => { console.log(res.data) })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // };
+    const onSubmit: SubmitHandler<FormData> = (data: any) => {
+        // console.log(data);
+        axios
+            .post(
+                'http://localhost/magic-books/backend/create/book',
+                data = FormData,
+                { headers: { 'Content-Type': 'application/json' } }
+            )
+            .then(response => { console.log(response.data) })
+            .catch(error => { console.log(error.data) });
     };
+    // const onSubmit: SubmitHandler<FormData> = async ({data}: any) => {
+    // await axios({
+    //     method: "post",
+    //     headers: { 'Content-Type': 'application/json'},
+    //     url: `http://localhost/magic-books/backend/create/book`,
+    //     data,
+    // })
+    // .then((res) => { console.log(res.data) })
+    // .catch((error) => {
+    //     console.log(error);
+    // });
+    // };
 
     //const [postBook, setPostBook] = React.useState(null);
 

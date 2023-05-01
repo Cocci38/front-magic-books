@@ -5,6 +5,7 @@ import { Book } from './views/Book';
 import { Home } from './views/Home';
 import { Routes, Route } from 'react-router-dom';
 import { PostBook } from './views/admin/PostBook';
+import { PostCategory } from './views/admin/PostCategory';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/book/:id' element={<Book/>}/>
         <Route path='/book' element={<PostBook/>}/>
+        <Route path='/category' element={<PostCategory/>}/>
       </Routes>
       
       <footer>
