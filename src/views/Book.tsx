@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 interface Props { }
 export const Book: React.FC<Props> = () => {
@@ -36,6 +38,7 @@ export const Book: React.FC<Props> = () => {
                         <p className="paragraphFlex"><span className="paragraphName">Éditeur</span><span>{ book.editor }</span></p>
                         <p className="paragraphFlex"><span className="paragraphName">Catégorie</span><span>{ book.categories_name }</span></p>
                         <p className="paragraphFlex"><span className="paragraphName">Résumé</span><span>{ book.summary }</span></p>
+                        <FontAwesomeIcon icon={faTrashCan} style={{ fontSize: 30, color: "brown" }} />
                     </div>
                     
             ))}</section>
